@@ -16,7 +16,7 @@
     <!-- ref: https://simplecss.org/ -->
     <style>
         body {
-            background-color: #1b057c !important;
+            background-color: #202123 !important;
             padding: %;
             color: #ccc;
             font-family: "Red Hat Mono", sans-serif;
@@ -25,6 +25,9 @@
         }
 
         .console {
+            padding: 14px;
+            border-radius: 5px;
+            background-color: #40414F;
             font-family: "Red Hat Mono", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
         }
 
@@ -75,6 +78,7 @@
         <input type="button" id="test-erasing" value="Test Erasing Effect">
     </p>
     <p class="console">
+        <a href=""></a>
         <span></span>
         <span>PS C:\\Users\\rob <br> >>> </span><span id="caption"></span><span id="cursor">|</span>
     </p>
@@ -82,7 +86,15 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js'></script>
     <script id="rendered-js">
         var captionLength = 0;
-        var caption1 = `I am an experienced Python programmer with a strong background in computer science and software development. Over the past five years, I have gained expertise in a wide range of Python libraries and frameworks, including Django, Flask, and NumPy. I have also completed several projects using Python, including the development of a web scraper for data analysis and the creation of a machine learning model for predicting stock prices. In my current role, I have consistently used Python to develop and maintain efficient and reliable software solutions. I am confident in my ability to utilize my Python skills to make a positive impact in any programming position. `;
+        var caption1 = `I am an experienced Python programmer with a strong background in computer science
+         and software development. Over the past five years, I have gained expertise in a wide range of
+          Python libraries and frameworks, including Django, Flask, and NumPy. 
+          I have also completed several projects using Python, including the development
+           of a web scraper for data analysis and the creation of a machine learning model for
+            predicting stock prices. In my current role, I have consistently used Python to develop
+             and maintain efficient and reliable software solutions.
+              I am confident in my ability to utilize my Python skills to make a positive impact
+               in any programming position. ~ Rob`;
 
 
         $(document).ready(function () {
