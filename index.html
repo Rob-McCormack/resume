@@ -34,6 +34,28 @@
         input[type="button"] {
             cursor: pointer;
         }
+
+        /* If the link is unvisited you see this color*/
+        a:link {
+            color: #006600;
+            text-decoration: none;
+        }
+
+        /* If the link is visited you see this color*/
+        a:visited {
+            color: rgb(255, 105, 223);
+        }
+
+        /* On placing mouse over the link */
+        a:hover {
+            color: rgb(128, 105, 255);
+            text-decoration: underline;
+        }
+
+        /* If the click the link,  you see this color*/
+        a:active {
+            color: rgb(255, 105, 138);
+        }
     </style>
 
     <script>
@@ -82,13 +104,15 @@
         <span></span>
         <span>PS C:\\Users\\rob <br> >>> </span><span id="caption"></span><span id="cursor">|</span>
     </p>
-
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js'></script>
     <script id="rendered-js">
         var captionLength = 0;
         var caption1 = `I am an experienced Python programmer with a strong background in computer science
-         and software development. Over the past five years, I have gained expertise in a wide range of
+         and software development.<br>
+         <a href="http://cnn.com">CNN</a>
+          <p>Over the past five years, I have gained expertise in a wide range of
           Python libraries and frameworks, including Django, Flask, and NumPy. 
+          </p>
           I have also completed several projects using Python, including the development
            of a web scraper for data analysis and the creation of a machine learning model for
             predicting stock prices. In my current role, I have consistently used Python to develop
