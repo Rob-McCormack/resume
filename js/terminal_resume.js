@@ -6,11 +6,23 @@ if (document.location.search.match(/type=embed/gi)) {
 }
 
 var captionLength = 0;
-currentDate = new Date().toJSON().slice(0, 10);
 
-var caption1 = currentDate + `  I am an experienced <mark>Python programmer</mark> with a strong background in computer science
+const d = new Date();
+let currentDate = d.toDateString();
+// currentDate = d.toString()
+
+// var dateFormat = require('dateformat');
+// var now = new Date();
+// currentDate = dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT");
+
+
+// currentDate = new Date().toDateString()
+
+
+var caption1 = `  I am an experienced <mark>Python programmer</mark> 
+ with a strong background in computer science
  and software development.<br>
- ~ Rob`;
+ ~ Rob` + ' . . . . . . . . ' + currentDate;
 
 
 $(document).ready(function () {
