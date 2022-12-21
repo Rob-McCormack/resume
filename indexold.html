@@ -13,8 +13,6 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!-- ref: https://simplecss.org/ -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js'></script>
-    <script type="text/javascript" src="js/terminal_resume.js"></script>
     <style>
         body {
             background-color: #202123 !important;
@@ -32,7 +30,7 @@
             font-size: 0.9rem;
             text-align: center;
             border-top: 0px solid var(--border);
-
+            */
         }
 
         i {
@@ -103,7 +101,17 @@
         }
     </style>
 
+    <script>
+        window.console = window.console || function (t) { };
+    </script>
 
+
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
     <link rel="apple-touch-icon" sizes="180x180" href="https://rob-mccormack.github.io/resume//apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://rob-mccormack.github.io/resume//favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://rob-mccormack.github.io/resume//favicon-16x16.png">
@@ -133,8 +141,90 @@
         <span>PS C:\\Users\\Rob_McCormack<br></span><span class="blink">>>> </span><span id="caption"></span><span
             id="cursor">|</span>
     </p>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js'></script>
+    <script id="rendered-js">
+        var captionLength = 0;
+        currentDate = new Date().toJSON().slice(0, 10);
+
+        var caption1 = currentDate + `  I am an experienced <mark>Python programmer</mark> with a strong background in computer science
+         and software development.<br>
+         ~ Rob`;
 
 
+        $(document).ready(function () {
+            setInterval('cursorAnimation()', 600);
+            captionEl = $('#caption');
+
+            testTypingEffect()
+
+            $('#test-typing').click(function () {
+                testTypingEffect();
+            });
+
+            $('#test-erasing').click(function () {
+                testErasingEffect();
+            });
+        });
+
+        function testTypingEffect() {
+            caption = caption1;
+            type();
+        }
+
+        function type() {
+            captionEl.html(caption.substr(0, captionLength++));
+            if (captionLength < caption.length + 1) {
+                setTimeout('type()', 50);
+            } else {
+                captionLength = 0;
+                caption = '';
+                allDone()
+
+            }
+        }
+
+        function allDone() {
+            <!-- document.getElementById('test-erasing').display = block -->
+            // alert('type all done Rob')
+
+            const element1 = document.getElementById("fa-3x");
+            element1.style.display = "block";
+
+
+        }
+
+        function testErasingEffect() {
+            caption = captionEl.html();
+            captionLength = caption.length;
+            if (captionLength > 0) {
+                erase();
+            } else {
+                $('#caption').html("You didn't write anything to erase, but that's ok!");
+                setTimeout('testErasingEffect()', 1000);
+            }
+        }
+
+        function erase() {
+            captionEl.html(caption.substr(0, captionLength--));
+            if (captionLength >= 0) {
+                setTimeout('erase()', 50);
+            } else {
+                captionLength = 0;
+                caption = '';
+            }
+        }
+
+        function cursorAnimation() {
+            $('#cursor').animate({
+                opacity: 0
+            },
+                'fast', 'swing').animate({
+                    opacity: 1
+                },
+                    'fast', 'swing');
+        }
+
+    </script>
 
     <p>
     <div id="fa-3x">
