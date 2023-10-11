@@ -2,4 +2,8 @@
 Resume for Rob McCormack
 
 ---
-Test
+View it on the web
+
+https://rob-mccormack.github.io/resume/
+
+
